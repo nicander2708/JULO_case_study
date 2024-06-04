@@ -1,0 +1,591 @@
+{
+	"info": {
+		"_postman_id": "548d1b22-db3e-4389-9c0b-eacc10edd0f7",
+		"name": "JULO case study",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19086828"
+	},
+	"item": [
+		{
+			"name": "Initialize",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customer_xid",
+							"value": "ea0212d3-abd6-406f-8c67-868e814a2439",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/init",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"init"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer_xid",
+									"value": "ea0212d3-abd6-406f-8c67-868e814a2436",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/init",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"init"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl94aWQiOiJlYTAyMTJkMy1hYmQ2LTQwNmYtOGM2Ny04NjhlODE0YTI0MzkifQ.G6xQ-xrtXa1UmpwO3HF7l1_czdxGOxrHEParaJ_e6fI\"\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "View Wallet Transactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl94aWQiOiJlYTAyMTJkMy1hYmQ2LTQwNmYtOGM2Ny04NjhlODE0YTI0MzkifQ.G6xQ-xrtXa1UmpwO3HF7l1_czdxGOxrHEParaJ_e6fI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/wallet/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer_xid",
+									"value": "ea0212d3-abd6-406f-8c67-868e814a2436",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/wallet/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"wallet",
+								"transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"amount\": 5000,\n            \"reference_id\": \"865290f7-99b4-4ecd-a05f-e3f2c7b01745\",\n            \"status\": \"success\",\n            \"transaction_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"transaction_date\": \"2024-06-04T19:50:27.638608+07:00\",\n            \"transaction_type\": \"withdrawal\"\n        },\n        {\n            \"amount\": 5000,\n            \"reference_id\": \"865290f7-88b4-4ecd-a05f-e3f2c7b01745\",\n            \"status\": \"success\",\n            \"transaction_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"transaction_date\": \"2024-06-04T19:49:55.857233+07:00\",\n            \"transaction_type\": \"deposit\"\n        },\n        {\n            \"amount\": 10000,\n            \"reference_id\": \"865290f7-d9d0-4ecd-a05f-e3f2c7b01745\",\n            \"status\": \"success\",\n            \"transaction_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"transaction_date\": \"2024-06-04T19:47:13.223691+07:00\",\n            \"transaction_type\": \"deposit\"\n        },\n        {\n            \"amount\": 10000,\n            \"reference_id\": \"865290f7-d9d0-4ecd-a05f-e3f2c7b01742\",\n            \"status\": \"success\",\n            \"transaction_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"transaction_date\": \"2024-06-04T19:46:50.163336+07:00\",\n            \"transaction_type\": \"deposit\"\n        }\n    ],\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Enable Wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl94aWQiOiJlYTAyMTJkMy1hYmQ2LTQwNmYtOGM2Ny04NjhlODE0YTI0MzkifQ.G6xQ-xrtXa1UmpwO3HF7l1_czdxGOxrHEParaJ_e6fI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"wallet"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/wallet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"wallet"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"wallet\": {\n            \"balance\": 0,\n            \"enabled_at\": \"2024-06-04T19:13:15.293192+07:00\",\n            \"id\": \"4e7dddda-14ef-47ef-8c42-f5e19c7c7b60\",\n            \"owned_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"status\": \"enabled\"\n        }\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Disable wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl94aWQiOiJlYTAyMTJkMy1hYmQ2LTQwNmYtOGM2Ny04NjhlODE0YTI0MzkifQ.G6xQ-xrtXa1UmpwO3HF7l1_czdxGOxrHEParaJ_e6fI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "is_disabled",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"wallet"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "is_disabled",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/wallet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"wallet"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"wallet\": {\n            \"balance\": 20000,\n            \"disabled_at\": \"2024-06-04T19:13:15.293192+07:00\",\n            \"id\": \"4e7dddda-14ef-47ef-8c42-f5e19c7c7b60\",\n            \"owned_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"status\": \"disabled\"\n        }\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "View Wallet Balance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl94aWQiOiJlYTAyMTJkMy1hYmQ2LTQwNmYtOGM2Ny04NjhlODE0YTI0MzkifQ.G6xQ-xrtXa1UmpwO3HF7l1_czdxGOxrHEParaJ_e6fI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"wallet"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "View Wallet Disabled",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/wallet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"wallet"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"error\": \"wallet disabled\"\n    },\n    \"status\": \"fail\"\n}"
+				},
+				{
+					"name": "View Wallet Enabled",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/wallet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"wallet"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"wallet\": {\n            \"balance\": 20000,\n            \"enabled_at\": \"2024-06-04T19:13:15.293192+07:00\",\n            \"id\": \"4e7dddda-14ef-47ef-8c42-f5e19c7c7b60\",\n            \"owned_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"status\": \"enabled\"\n        }\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Virtual Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl94aWQiOiJlYTAyMTJkMy1hYmQ2LTQwNmYtOGM2Ny04NjhlODE0YTI0MzkifQ.G6xQ-xrtXa1UmpwO3HF7l1_czdxGOxrHEParaJ_e6fI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "amount",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "reference_id",
+							"value": "865290f7-d9d0-4ecd-a05f-e3f2c7b01745",
+							"description": "unique",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/wallet/deposits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"deposits"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "reference_id",
+									"value": "865290f7-d9d0-4ecd-a05f-e3f2c7b01745",
+									"description": "unique",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/wallet/deposits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"wallet",
+								"deposits"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"deposit\": {\n            \"amount\": 10000,\n            \"deposited_at\": \"2024-06-04T19:47:13.223691+07:00\",\n            \"deposited_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\",\n            \"id\": \"5b5419e3-5808-496a-b048-24cbe689ad3f\",\n            \"reference_id\": \"865290f7-d9d0-4ecd-a05f-e3f2c7b01745\",\n            \"status\": \"success\"\n        }\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Withdraw Virtual Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl94aWQiOiJlYTAyMTJkMy1hYmQ2LTQwNmYtOGM2Ny04NjhlODE0YTI0MzkifQ.G6xQ-xrtXa1UmpwO3HF7l1_czdxGOxrHEParaJ_e6fI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "amount",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "reference_id",
+							"value": "865290f7-88b4-4ecd-a05f-e3f2c7b01745",
+							"description": "unique",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/wallet/withdrawals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"withdrawals"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "reference_id",
+									"value": "865290f7-88b4-4ecd-a05f-e3f2c7b01745",
+									"description": "unique",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/wallet/withdrawals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"wallet",
+								"withdrawals"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"withdrawal\": {\n            \"amount\": 5000,\n            \"id\": \"b7524c64-a009-4327-822a-ab69b89d588f\",\n            \"reference_id\": \"865290f7-99b4-4ecd-a05f-e3f2c7b01745\",\n            \"status\": \"success\",\n            \"withdrawn_at\": \"2024-06-04T19:50:27.638608+07:00\",\n            \"withdrawn_by\": \"ea0212d3-abd6-406f-8c67-868e814a2439\"\n        }\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		}
+	]
+}
